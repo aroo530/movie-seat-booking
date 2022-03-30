@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+:root{
+    --occupied-seat-color: #ff0000;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  flex-direction: column;
+  background: #242333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.movie-container {
+  margin: 20px 0px;
+}
+.key-map {
+  list-style: none;
+  background: rgba(0, 0, 0, 0.1);
+  color: #777;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 20px 0px;
+}
+.key-map li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px 5px;
+}
+.key-map li small{
+    margin-left: 5px;
+}
+select {
+  background: #fff;
+  border-radius: 5px;
+  appearance: none;
+  padding: 5px 15px;
+  border: none;
+  margin-left: 10px;
+  font-size: 14px;
+  
+}
+.container{
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+.screen{
+background-color: #fff;
+height: 70px;
+width: 100%;
+margin: 15px 0;
+transform: rotateX(-45deg);
+box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+.row{
+    display: flex;
+}
+
+/* cut through the seat col */
+.seat:nth-of-type(2){
+    margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2){
+    margin-left: 18px;
+}
+
+.seat {
+    background-color: #444451;
+    height: 12px;
+    width: 15px;
+    margin: 3px;
+    border-top-left-radius:50%;
+    border-top-right-radius: 50%;
+}
+.seat.selected{
+    background-color: #6efaf6;
+}
+.seat.occupied{
+    background-color: #fff;
+}
+
+.container .seat:not(.occupied):hover{
+    cursor: pointer;
+    transform:  scale(1.1)  ;
+}
+
+p.text span{
+    color: #6efaf6;
+}
+button{
+  border: none;
+    border-radius: 5px;
+    padding: 7px 20px;
+    width: 100px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.button-container{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+#reset{
+    background-color: #7a0909;
+}
+#save{
+    background-color: #2e2ca1;    
+}
